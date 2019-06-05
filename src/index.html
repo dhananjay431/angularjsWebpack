@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+
+
+    <script src="./bundle.js"></script>
+  </head>
+  <body ng-controller="TodoListController as todoList">
+    <h2>Todo</h2>
+    <!-- <my-tabs>
+  <my-pane title="Hello">
+    <h4>Hello</h4>
+    <p>Lorem ipsum dolor sit amet</p>
+  </my-pane>
+  <my-pane title="World">
+    <h4>World</h4>
+    <em>Mauris elementum elementum enim at suscipit.</em>
+    <p><a href ng-click="i = i + 1">counter: {{i || 0}}</a></p>
+  </my-pane>
+</my-tabs> -->
+data <my-drop op="todoList.data" model="todoList.datasel1"></my-drop>todoList.datasel ={{todoList.datasel1}} <br>=>
+data2<my-drop op="todoList.data2" model="todoList.datase2"></my-drop> todoList.datase2={{todoList.datase2}}
+    <div class="d-flex">
+      <div class="flex-1">
+          
+          
+          <button type="button" class="btn btn-primary" ng-click="todoList.togbtn()">Primary</button>
+      </div>
+      <div class="flex-1">
+          <div class="dropdown" >
+              <button class="btn btn-secondary dropdown-toggle" 
+              type="button" 
+              style="width:150px;"
+              id="dropdownMenuButton" 
+              data-toggle="dropdown" 
+              aria-haspopup="true" 
+              aria-expanded="false"
+              ng-class="{disabled:todoList.tog}">
+                {{todoList.data.selected}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <span class="dropdown-item" ng-repeat="d in todoList.data.op">
+                  <input type="checkbox" ng-model="d.value" ng-change="todoList.change(todoList.data)"> {{d.name}}
+                </span>
+              </div>
+            </div>
+      </div>
+    </div>
+    
+
+
+  </body>
+</html>
